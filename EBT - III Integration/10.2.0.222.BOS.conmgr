@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="10.2.0.222.BOS"
+  DTS:DTSID="{3873A346-AB0F-4FDB-9C24-03F988DD2A19}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::_pSQL_222_BOS_Report_Destination]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=10.2.0.222;Initial Catalog=BOS;Integrated Security=True;TrustServerCertificate=True;Application Name=&quot;SSIS-BOS - BPI Integration-{52ED2C90-4294-42B8-9465-D3DA3775C0AE}10.2.0.222.BOS&quot;;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

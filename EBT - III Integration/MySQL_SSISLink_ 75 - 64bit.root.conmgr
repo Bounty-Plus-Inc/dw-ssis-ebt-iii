@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="MySQL_SSISLink_ 75 - 64bit.root"
+  DTS:DTSID="{CEF958BF-940B-4772-A091-D53B193628CB}"
+  DTS:CreationName="ADO.NET:System.Data.Odbc.OdbcConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::_pMySQL_75_Source_64bit]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::_pMySQL_75_Source_64bit_Password]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="UserName">@[$Project::_pMySQL_75_Source_64bit_UserName]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="uid=lcolico;Dsn=MySQL_SSISLink_ 75 - 64bit;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAs4EpMm1Dg0K5+SPVRacjOwAAAAACAAAAAAAQZgAAAAEAACAAAAB276zrzmwYdpuW9k1Bc5pfVfmbGIQVgc2f4Q4Tm/sICgAAAAAOgAAAAAIAACAAAABk2fcyvHZSx2jbN2OD9lpU0FvfYuvt/k5pOgMVdoANhoAAAABzMQ0Akv1N7e+wz+ZkTdwGTHSOClzwD90G+ONf+buG9K9pgLm2S8M2wnseJ0m1x3VGhT3i30d+Z4ZR7C3hZP7qcGANlU7q0VCNweeC7CPnvE/PKM6udO0LZIjs/DpzSxTXdystmac21HaYondfh4QMo70+Ebr/0QFqqJDcBj+QZkAAAAALhjNqH1ZTWr5XfW0UnbAd69WIqtNimbzmDIbdEqMkSPVTyFv/SE0lk59P1udLU49dz2E9pIaD0h2IUmYZRWK9</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

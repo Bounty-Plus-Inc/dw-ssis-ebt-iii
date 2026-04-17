@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="10.2.0.205.DWMCS.sa_dev"
+  DTS:DTSID="{53CB8050-0FF0-4B1A-A1FB-F9D456BCC41C}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::_pSQL_205_Dwmcs_Report_Destination]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=Z-EDL2;Initial Catalog=DWMCS;Integrated Security=True;TrustServerCertificate=True;Application Name=&quot;SSIS-BOS - BPI Integration-{E1BBE5A2-E8BF-4DB8-98B6-92FE8B91A7F7}Z-EDL2.DWMCS&quot;;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

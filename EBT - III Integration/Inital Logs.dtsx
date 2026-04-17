@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/1/2025 9:37:31 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="BNTYBGC000929"
+  DTS:CreatorName="BOUNTY\lcolico"
+  DTS:DTSID="{5481C9AE-9861-4CC7-B2FA-EE380B252A99}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Inital Logs"
+  DTS:PackageType="5"
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{DC953A62-EA96-417E-8186-CAB1CA64A5E4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{E05C4AED-FD7E-4CA9-963F-976C566C591B}"
+      DTS:ObjectName="Child_Package_Name"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue"
+        xml:space="preserve"></DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="20"
+      DTS:DTSID="{782FA709-BAB1-47AF-8F81-3051E3D7B844}"
+      DTS:ObjectName="Child_TableReference_Id"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="20"
+        DTS:Name="ParameterValue">0</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8BB8D0A6-AF91-41FB-8967-4820AB6EDD40}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::Child_Package_Name]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="_Child_Package_Name">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1123E028-FC6A-4B3E-94AC-C477BF19D133}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::Child_TableReference_Id]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="_Child_TableReference_Id">
+      <DTS:VariableValue
+        DTS:DataType="20">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5A3306F9-BD19-4727-B79B-9EE96306130C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="SqlStatementSource">" INSERT INTO [DWMCS].[dbo].[RequestLog]
+      ([Request_Id]
+      ,[TableReference_Id]
+      ,[Request_Date]
+      ,[Request_Time]
+      ,[Last_Retrieved_Date]
+      ,[Request_EndTime]
+      ,[Insert_Record_Count]
+      ,[Prev_Record_Count]
+      ,[Record_Count]
+      ,[Source_Count]
+      ,[Package_Name]
+      ,[Request_Status]
+      ,[Phase_Name]
+      ,[Machine_Run])
+	  VALUES (
+	  '"+(DT_WSTR,9) @[$Package::Child_TableReference_Id]+""+(DT_WSTR,9) "-00000001"+"'
+      ,'"+(DT_WSTR,9)  @[$Package::Child_TableReference_Id]+"'
+      ,GETDATE()
+      ,GETDATE()
+      ,GETDATE()
+      ,GETDATE()
+      ,0
+      ,0
+      ,0
+      ,0
+      ,'"+ @[$Package::Child_Package_Name]+"'
+      ,'Success'
+      ,'Completed'
+      ,'"+@[System::UserName]+"'
+	  )"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D91AC86F-074D-42D0-AC6C-18388D404413}"
+          SQLTask:SqlStatementSource=" INSERT INTO [DWMCS].[dbo].[RequestLog]&#xA;      ([Request_Id]&#xA;      ,[TableReference_Id]&#xA;      ,[Request_Date]&#xA;      ,[Request_Time]&#xA;      ,[Last_Retrieved_Date]&#xA;      ,[Request_EndTime]&#xA;      ,[Insert_Record_Count]&#xA;      ,[Prev_Record_Count]&#xA;      ,[Record_Count]&#xA;      ,[Source_Count]&#xA;      ,[Package_Name]&#xA;      ,[Request_Status]&#xA;      ,[Phase_Name]&#xA;      ,[Machine_Run])&#xA;&#x9;  VALUES (&#xA;&#x9;  '0-00000001'&#xA;      ,'0'&#xA;      ,GETDATE()&#xA;      ,GETDATE()&#xA;      ,GETDATE()&#xA;      ,GETDATE()&#xA;      ,0&#xA;      ,0&#xA;      ,0&#xA;      ,0&#xA;      ,''&#xA;      ,'Success'&#xA;      ,'Completed'&#xA;      ,'BOUNTY\lcolico'&#xA;&#x9;  )" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@_Child_Package_Name"
+            SQLTask:DtsVariableName="User::_Child_Package_Name"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@_Child_TableReference_Id"
+            SQLTask:DtsVariableName="User::_Child_TableReference_Id"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="12"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@UserName"
+            SQLTask:DtsVariableName="System::UserName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="234,64" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

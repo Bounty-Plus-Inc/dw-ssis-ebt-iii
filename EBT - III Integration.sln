@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36301.6 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "EBT - III Integration", "EBT - III Integration\EBT - III Integration.dtproj", "{AAE373AC-5C1D-A003-CA5A-0D002AD28244}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AAE373AC-5C1D-A003-CA5A-0D002AD28244}.Development|Default.ActiveCfg = Development
+		{AAE373AC-5C1D-A003-CA5A-0D002AD28244}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E05B8640-CCF2-4F27-B160-62C56520DB63}
+	EndGlobalSection
+EndGlobal

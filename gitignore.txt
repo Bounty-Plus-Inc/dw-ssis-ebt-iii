@@ -1,0 +1,12 @@
+# Build directories
+bin/
+obj/
+.vs/
+
+# Deployment files
+*.ispac
+
+# User-specific files
+*.dtproj.user
+*.suo
+*.user
